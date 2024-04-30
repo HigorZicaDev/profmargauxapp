@@ -1,0 +1,10 @@
+COMANDOS DOCKER IMPORTANTES
+
+iniciar todos os containers docker
+docker compose up -d
+
+parar todos os containers docker 
+docker kill $(docker ps -q)
+
+acessar container da aplicação para comandos artisan
+docker compose exec app bash
