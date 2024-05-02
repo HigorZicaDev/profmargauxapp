@@ -3,21 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Student;
 use Illuminate\Http\Request;
 
-class StudentController extends Controller
+class ScheduleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $students = Student::paginate(10); 
-        // dd($users);
-        return view('admin.students.index', [
-            'students' => $students
-        ]);
+        return view('admin.schedules.index');
     }
 
     /**
@@ -25,7 +20,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('admin.students.create');
+        //
     }
 
     /**
@@ -33,11 +28,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $student = $request->all();
-        $student['password'] = bcrypt('123456789');
-        Student::create($student);
-        // dd($student);
-        return redirect()->route('students.index');
+        //
     }
 
     /**

@@ -25,7 +25,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.teachers.create');
     }
 
     /**
@@ -33,7 +33,11 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $teacher = $request->all();
+        $teacher['password'] = bcrypt('123456789');
+        Teacher::create($teacher);
+        // dd($teacher);
+        return redirect()->route('teachers.index');
     }
 
     /**
