@@ -19,4 +19,10 @@ class Student extends Model
         'status',
         'date_birth'
     ];
+
+    public function schedule()
+    {
+        return $this->hasMany(Schedule::class, 'student_id', 'id');
+    }
+
 }

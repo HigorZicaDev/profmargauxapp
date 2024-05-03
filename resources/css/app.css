@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.inbackground {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9 !important;
+}
+
+#crud-modal-schedules {
+    position: fixed !important;
+    width: 700px !important;
+    margin-left: calc(50% - 350px) !important;
+    margin-top: 200px;
+    z-index: 99 !important;
+}

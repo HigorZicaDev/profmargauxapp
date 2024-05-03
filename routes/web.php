@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/teachers', [TeacherController::class, 'store'])->name('teachers.store');
     
     Route::get('/schedules', [ScheduleController::class, 'index'])->name('schedules.index');
+    Route::post('/schedules', [ScheduleController::class, 'store'])->name('schedules.store');
 
 });
 
