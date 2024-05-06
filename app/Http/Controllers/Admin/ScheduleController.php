@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreScheduleRequest;
 use App\Models\Schedule;
 use App\Models\Student;
 use App\Models\Teacher;
@@ -68,6 +69,7 @@ class ScheduleController extends Controller
      */
     public function store(Request $request)
     {
+
         $schedule = $request->all();
         $schedule['done'] = 0;
         // dd($schedule);
