@@ -36,12 +36,15 @@ class ScheduleController extends Controller
 
         foreach ($schedules as $schedule) {
             $events[] = [
+                'id' => $schedule->id,
                 'title' => $schedule->name . ' ('.$schedule->student->name.')',
-                'professor' => $schedule->teacher->name,
-                'start' => $schedule->date_schedule,
-                'end' => $schedule->date_schedule,
-                'time' => $schedule->time_schedule,
+                'student' => $schedule->student->name,
+                'teacher' => $schedule->teacher->name,
+                'description' => $schedule->description,
+                'start' => $schedule->date_start_schedule,
+                'end' => $schedule->date_end_schedule,
                 'color' => $schedule->color_schedule,
+                'done' => $schedule->done,
             ];
         }
         json_encode($events);
@@ -93,14 +96,41 @@ class ScheduleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // dd($id);
+        if(!$schedule = Schedule::find($id)){
+            return redirect()->route('schedules.index')->with('message', 'Agendamento não encontrado!');
+        }
+        // dd($schedule);
+        $data = [
+            'id' => $request->input('id'),
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'date_start_schedule' => $request->input('date_start_schedule'),
+            'date_end_schedule' => $request->input('date_end_schedule'),
+            'color_schedule' => $request->input('color'),
+            'done' => $request->input('done')
+        ];
+        // dd($data);
+        $schedule->update($data);
+        // $schedule = Schedule::find($id);
+        // $scheduleData = $request->all();
+        // $scheduleData['done'] = 0;
+        // // dd($schedule);
+        // // $schedule->create($scheduleData);
+
+        // dd($request->all());
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Schedule $schedule, string $id)
     {
-        //
+        if(!$schedule = Schedule::find($id)){
+            return redirect()->route('schedules.index')->with('message', 'Agendamento não encontrado!');
+        }
+
+        $schedule->delete($id);
+        return redirect()->route('schedules.index');
     }
 }

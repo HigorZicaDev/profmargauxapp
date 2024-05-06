@@ -14,8 +14,8 @@ class Schedule extends Model
         'teacher_id',
         'name',
         'description',
-        'date_schedule',
-        'time_schedule',
+        'date_start_schedule',
+        'date_end_schedule',
         'color_schedule',
         'done'
     ];

@@ -29,6 +29,8 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/schedules', [ScheduleController::class, 'index'])->name('schedules.index');
     Route::post('/schedules', [ScheduleController::class, 'store'])->name('schedules.store');
+    Route::put('/schedules/update/{id}', [ScheduleController::class, 'update'])->name('schedules.update');
+    Route::get('/schedules/{id}', [ScheduleController::class, 'destroy'])->name('schedules.destroy');
 
 });
 

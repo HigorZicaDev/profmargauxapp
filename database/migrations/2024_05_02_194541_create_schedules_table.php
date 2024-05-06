@@ -17,8 +17,8 @@ return new class extends Migration
             $table->foreignId('teacher_id')->constrained('teachers', 'id');
             $table->string('name', 100);
             $table->text('description')->nullable();
-            $table->date('date_schedule');
-            $table->string('time_schedule', 5);
+            $table->datetime('date_start_schedule');
+            $table->datetime('date_end_schedule');
             $table->string('color_schedule', 10);
             $table->boolean('done')->default(false);
             $table->timestamps();

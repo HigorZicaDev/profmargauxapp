@@ -15,3 +15,19 @@
     margin-top: 200px;
     z-index: 99 !important;
 }
+
+#details-modal-schedules {
+    position: fixed !important;
+    width: 700px !important;
+    margin-left: calc(50% - 350px) !important;
+    margin-top: 200px;
+    z-index: 99 !important;
+}
+
+.fc .fc-timegrid-slot {
+    height: 5.5em !important;
+}
+
+.fc-v-event .fc-event-title {
+    font-size: 15px;
+}
