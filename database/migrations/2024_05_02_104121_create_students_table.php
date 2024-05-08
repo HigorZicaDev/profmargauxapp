@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('adresse')->nullable(true);
             $table->string('city')->nullable(true);
             $table->string('phone')->nullable(true);
-            $table->boolean('status');
+            $table->boolean('is_active')->default(true)->nullable(true);
             $table->date('date_birth')->nullable(true);
             $table->timestamps();
         });

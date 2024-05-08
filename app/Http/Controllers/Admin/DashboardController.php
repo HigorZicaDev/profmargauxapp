@@ -14,7 +14,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $students = Student::where('status', 1)->count();
+        $students = Student::where('is_active', 1)->count();
         // $students = Student::all();
         $teachers = Teacher::where('status', 1)->count();
         $schedules = Schedule::with(['student', 'teacher'])->get()->count();

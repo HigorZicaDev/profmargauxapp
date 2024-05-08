@@ -16,8 +16,8 @@ class Student extends Model
         'adresse',
         'city',
         'phone',
-        'status',
-        'date_birth'
+        'is_active',
+        'date_birth',
     ];
 
     public function schedule()

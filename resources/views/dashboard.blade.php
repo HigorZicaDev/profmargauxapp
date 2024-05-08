@@ -22,8 +22,21 @@
                             </div>
                     
                             <div class="ml-4">
-                            <h2 class="font-semibold">{{$students}} Alunos</h2>
-                            <p class="mt-2 text-sm text-gray-500">Ultimo aluno cadastrado: Joao Zica</p>
+                                <h2 class="font-semibold">{{$students}} Alunos</h2>
+                                {{-- INICIO DO MEU PRIMEIRO COMPONENT COM PROPS E ALPINE JS --}}
+                                <x-toggle-dashboard>
+                                    <x-slot name="toggle">
+                                        <button>
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABVElEQVR4nO2WsU7DMBCGv5dgANqKkaFMsMELVIKK1wBKeRY2UBEDI3uBN2l4AVDYaNhoFWTpIkWRa58dgxj6S78UxY6/3OV8Dqz1D9UDLoEXIAO+xJncGwHdlMBt4BZYAKXHS+AR2GkLPQUKBbDpOTCMhV5JBKHQevTjmEiXLaB1uDryTmR6XWnf0oDvE0IrTzRbRlO9oV5IJldq/AvQyhcu8LPlgUPgAMgVi5s5+8CRZWzqAr9aHjALGfU98FzmIC/aHM9cYFs1fwB7Mr4LvCnmvFvmFKFgH1wDLYHP0FS74FpoCcxCi2vVd+w3rn3FN3WBR4rKrUepibTymQvcVTaQXCpXu82+fQ3E6C5Bs2j6BuXBP08INdW8iVKDRD3bHIsnWmi9b7f9ETD/aFEaRqbdpPeYltoArqUyNVE+hHxTjTpytD1JFyrEM2kO55otsxZ/rR/urptHRM5dtwAAAABJRU5ErkJggg==">
+                                        </button>
+                                        
+                                    </x-slot>
+                                    <x-slot name="conteudo">
+                                        <p class="mx-4 mt-2 text-sm text-gray-500">Ultimo aluno cadastrado: Joao Zica</p>
+                                    </x-slot>
+
+                                </x-toggle-dashboard>
+                                {{-- FINAL DO MEU PRIMEIRO COMPONENT COM PROPS E ALPINE JS --}}
                             </div>
                         </div>
                     
@@ -35,8 +48,19 @@
                             </div>
                     
                             <div class="ml-4">
-                            <h2 class="font-semibold">{{$teachers}}  Professores</h2>
-                            <p class="mt-2 text-sm text-gray-500">Ultimo professor cadastrado: Fernando Zica</p>
+                                <h2 class="font-semibold">{{$teachers}}  Professores</h2>
+                                <x-toggle-dashboard>
+                                    <x-slot name="toggle">
+                                        <button>
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABVElEQVR4nO2WsU7DMBCGv5dgANqKkaFMsMELVIKK1wBKeRY2UBEDI3uBN2l4AVDYaNhoFWTpIkWRa58dgxj6S78UxY6/3OV8Dqz1D9UDLoEXIAO+xJncGwHdlMBt4BZYAKXHS+AR2GkLPQUKBbDpOTCMhV5JBKHQevTjmEiXLaB1uDryTmR6XWnf0oDvE0IrTzRbRlO9oV5IJldq/AvQyhcu8LPlgUPgAMgVi5s5+8CRZWzqAr9aHjALGfU98FzmIC/aHM9cYFs1fwB7Mr4LvCnmvFvmFKFgH1wDLYHP0FS74FpoCcxCi2vVd+w3rn3FN3WBR4rKrUepibTymQvcVTaQXCpXu82+fQ3E6C5Bs2j6BuXBP08INdW8iVKDRD3bHIsnWmi9b7f9ETD/aFEaRqbdpPeYltoArqUyNVE+hHxTjTpytD1JFyrEM2kO55otsxZ/rR/urptHRM5dtwAAAABJRU5ErkJggg==">
+                                        </button>
+                                        
+                                    </x-slot>
+                                    <x-slot name="conteudo">
+                                        <p x-show="open" class="mx-4 mt-2 text-sm text-gray-500">Ultimo professor cadastrado: Fernando Zica</p>
+                                    </x-slot>
+
+                                </x-toggle-dashboard>
                             </div>
                         </div>
                         <div class="flex items-start rounded-xl bg-white p-4 shadow-lg">
@@ -47,8 +71,19 @@
                             </div>
                     
                             <div class="ml-4">
-                            <h2 class="font-semibold">Total de agendamentos: {{$schedules}} </h2>
-                            <p class="mt-2 text-sm text-gray-500">Ultimo aula agendada : <br> Aluno = Fernando Zica <br> Professor = Margaux de Pinho</p>
+                                <h2 class="font-semibold">Nº agendamentos: {{$schedules}} </h2>
+                                <x-toggle-dashboard>
+                                    <x-slot name="toggle">
+                                        <button>
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABVElEQVR4nO2WsU7DMBCGv5dgANqKkaFMsMELVIKK1wBKeRY2UBEDI3uBN2l4AVDYaNhoFWTpIkWRa58dgxj6S78UxY6/3OV8Dqz1D9UDLoEXIAO+xJncGwHdlMBt4BZYAKXHS+AR2GkLPQUKBbDpOTCMhV5JBKHQevTjmEiXLaB1uDryTmR6XWnf0oDvE0IrTzRbRlO9oV5IJldq/AvQyhcu8LPlgUPgAMgVi5s5+8CRZWzqAr9aHjALGfU98FzmIC/aHM9cYFs1fwB7Mr4LvCnmvFvmFKFgH1wDLYHP0FS74FpoCcxCi2vVd+w3rn3FN3WBR4rKrUepibTymQvcVTaQXCpXu82+fQ3E6C5Bs2j6BuXBP08INdW8iVKDRD3bHIsnWmi9b7f9ETD/aFEaRqbdpPeYltoArqUyNVE+hHxTjTpytD1JFyrEM2kO55otsxZ/rR/urptHRM5dtwAAAABJRU5ErkJggg==">
+                                        </button>
+                                        
+                                    </x-slot>
+                                    <x-slot name="conteudo">
+                                        <p x-show="open" class="mx-4 mt-2 text-sm text-gray-500">Ultimo aula agendada : <br> Aluno = Fernando Zica <br> Professor = Margaux de Pinho</p>
+                                    </x-slot>
+
+                                </x-toggle-dashboard>
                             </div>
                         </div>
 

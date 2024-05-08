@@ -53,7 +53,13 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        if(!$student = Student::find($id)){
+            return redirect()->route('students.index');
+        }
+
+        return view('admin.students.edit', [
+            'student' => $student
+        ]);
     }
 
     /**
@@ -61,7 +67,20 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        if(!$student = Student::find($id)){
+            return back();
+        }
+
+        $saveStudent = $request->all();
+        $saveStudent['is_active'] = (bool)$request->input('is_active') ? 1 : 0;
+
+        $student->update($saveStudent);
+        return redirect()->route('students.index');
+        // if($saveStudent){
+        //     return redirect()->route('students.index');
+        // } else {
+        //     Echo 'Erro ao efetuar as edições!';
+        // }
     }
 
     /**
@@ -69,6 +88,12 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        if(!$student = Student::find($id)){
+            return back();
+        }
+
+        $student->delete($id);
+        return redirect()->route('students.index');
+
     }
 }
