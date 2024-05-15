@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\SalesController;
 use App\Http\Controllers\Admin\ScheduleController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TeacherController;
@@ -32,6 +33,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/schedules', [ScheduleController::class, 'store'])->name('schedules.store');
     Route::put('/schedules/update/{id}', [ScheduleController::class, 'update'])->name('schedules.update');
     Route::get('/schedules/{id}', [ScheduleController::class, 'destroy'])->name('schedules.destroy');
+    
+    Route::get('/sales', [SalesController::class, 'index'])->name('sales.index');
+    Route::get('/sales/create', [SalesController::class, 'create'])->name('sales.create');
+    Route::post('/sales', [SalesController::class, 'store'])->name('sales.store');
+    Route::get('/sales/{id}/edit', [SalesController::class, 'edit'])->name('sales.edit');
+    Route::put('/sales/update/{id}', [SalesController::class, 'update'])->name('sales.update');
+    Route::delete('/sales/{id}', [SalesController::class, 'destroy'])->name('sales.delete');
 
 });
 

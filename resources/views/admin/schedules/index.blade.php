@@ -244,7 +244,7 @@
 
                     modalDetails.style.transition = 'opacity 300ms';
 
-                    btnModalDelete.href = `http://localhost:8090/schedules/${info.event.id}`
+                    btnModalDelete.href = `http://localhost/schedules/${info.event.id}`
 
                     setTimeout(() => modalDetails.style.opacity = 1, 100);
                 }
@@ -307,7 +307,7 @@
 
                 var ajax = new XMLHttpRequest();
                 var token = getCookie('XSRF-TOKEN');
-                ajax.open('PUT', `http://localhost:8090/schedules/update/${info.event.id}`, false);
+                ajax.open('PUT', `http://localhost/schedules/update/${info.event.id}`, false);
                 ajax.setRequestHeader('Content-type', 'application/json');
                 ajax.setRequestHeader('X-XSRF-TOKEN', token);
                 ajax.send(JSON.stringify(dadosMoveEvent));

@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo src="assets/images/ArteLogoSite.gif" class="block h-10 w-16 fill-current text-gray-800 dark:text-gray-200"></x-application-logo>
+                        <x-application-logo src="{{url('./assets/images/ArteLogoSite.gif')}}" class="block h-10 w-16 fill-current text-gray-800 dark:text-gray-200"></x-application-logo>
                     </a>
                 </div>
 
@@ -29,6 +29,11 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('schedules.index')" :active="request()->routeIs('schedules.index')">
                         {{ __('Agenda de Aulas') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('sales.index')" :active="request()->routeIs('sales.index')">
+                        {{ __('Vendas') }}
                     </x-nav-link>
                 </div>
             </div>
